@@ -5,6 +5,7 @@ import zipfile
 import io
 import re
 import time
+from pathlib import Path
 import yaml
 from PIL import Image
 from io import BytesIO
@@ -402,17 +403,20 @@ with col2:
             result = agente_artista.run_sync(apresentacao_final.data)
             resultado = result.data
 
+            # Criar um arquivo zip na memória
+            zip_buffer = io.BytesIO()
             for img in resultado.imagens:
                 descricao = extrai_descricao(img.markdown)
-                nome_arquivo = f"{int(img.slide)-1}"
+                nome_arquivo = f"{int(img.slide)-1}.png"
                 caminho_imagem = gera_imagem(descricao, nome_arquivo)
-
+                with zipfile.ZipFile(zip_buffer, "w") as zip_file:
+                    for item in st.session_state.imagens_geradas:
+                        zip_file.write(item[caminho_imagem], arcname=Path(item[caminho_imagem]).name)
                 st.image(caminho_imagem, caption=f"Slide {img.slide}")
-    
-                with open(caminho_imagem, "rb") as file:
-                    st.download_button(
-                        label=f"Baixar Slide {img.slide}",
-                        data=file,
-                        file_name=nome_arquivo,
-                        mime="image/png"
-                    )
+                zip_buffer.seek(0)
+            st.download_button(
+                label="Baixar todas as imagens (.zip)",
+                data=zip_buffer,
+                file_name="slides.zip",
+                mime="application/zip"
+            ) 
