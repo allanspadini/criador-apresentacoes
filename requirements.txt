@@ -4,3 +4,4 @@ fastembed
 qdrant-client
 google-genai
 python-dotenv
+nest-asyncio
