@@ -404,19 +404,23 @@ with col2:
             resultado = result.data
 
             # Criar um arquivo zip na memória
+            st.session_state.imagens_geradas = []  # Armazena os caminhos
+
             zip_buffer = io.BytesIO()
-            for img in resultado.imagens:
-                descricao = extrai_descricao(img.markdown)
-                nome_arquivo = f"{int(img.slide)-1}.png"
-                caminho_imagem = gera_imagem(descricao, nome_arquivo)
-                with zipfile.ZipFile(zip_buffer, "w") as zip_file:
-                    for item in st.session_state.imagens_geradas:
-                        zip_file.write(item[caminho_imagem], arcname=Path(item[caminho_imagem]).name)
-                st.image(caminho_imagem, caption=f"Slide {img.slide}")
-                zip_buffer.seek(0)
+            with zipfile.ZipFile(zip_buffer, "w") as zip_file:
+                for img in resultado.imagens:
+                    descricao = extrai_descricao(img.markdown)
+                    nome_arquivo = f"{img.slide}.png"
+                    caminho_imagem = gera_imagem(descricao, nome_arquivo)
+                    st.image(caminho_imagem, caption=f"Slide {img.slide}")
+
+                    zip_file.write(caminho_imagem, arcname=Path(caminho_imagem).name)
+                    st.session_state.imagens_geradas.append(caminho_imagem)
+
+            zip_buffer.seek(0)
             st.download_button(
                 label="Baixar todas as imagens (.zip)",
                 data=zip_buffer,
                 file_name="slides.zip",
                 mime="application/zip"
-            ) 
+            )
