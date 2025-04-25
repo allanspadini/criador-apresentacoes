@@ -1,0 +1,7 @@
+pydantic-ai-slim[tavily]
+docling
+fastembed
+qdrant-client
+google-genai
+python-dotenv
+nest-asyncio

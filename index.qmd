@@ -1,0 +1,126 @@
+---
+title: Ganhos em vendas de arranhadores
+author: Gatito Petshop
+format:
+  revealjs:
+    theme: dark
+    incremental: true
+
+---
+
+## Resumo Executivo
+
+- Faturamento de R$ 127.845,00 em março de 2025, um aumento de 8,3% em relação ao ano anterior.
+- Ração lidera as vendas, representando 62% do faturamento.
+- Ticket médio de R$ 98,35, com um aumento de 3,7% em relação ao mês anterior.
+
+::: {.notes}
+Em março de 2025, a Gatito Petshop registrou um faturamento total de R$ 127.845,00, um crescimento de 8,3% em relação ao ano anterior. As rações lideram as vendas com 62% do faturamento, seguidas por acessórios como arranhadores (15%) e brinquedos (12%). O ticket médio foi de R$ 98,35, com um aumento de 3,7% em relação ao mês anterior.
+:::
+
+## Faturamento com Rações por Categoria
+
+```{python}
+import matplotlib.pyplot as plt
+
+categorias = ['Premium', 'Super Premium', 'Úmidas', 'Medicinais']
+valores = [23520, 15725, 9500, 6370]
+
+plt.figure(figsize=(8, 6))
+plt.bar(categorias, valores, color='skyblue')
+plt.xlabel('Categoria de Ração')
+plt.ylabel('Faturamento (R$)')
+plt.title('Faturamento por Categoria de Ração')
+plt.grid(axis='y')
+plt.show()
+
+
+```
+
+::: {.notes}
+O faturamento com rações por categoria é o seguinte: Rações Premium: R$23.520,00, Rações Super Premium: R$15.725,00, Rações Úmidas: R$9.500,00 e Rações Medicinais: R$6.370,00.
+:::
+
+## Faturamento com Arranhadores por Categoria
+
+- Arranhadores Torre: R$4.860,00
+- Arranhadores Parede: R$1.440,00 (Estoque Crítico)
+- Arranhadores Tapete: R$2.700,00
+
+::: {.notes}
+O faturamento com arranhadores nas vendas por categoria é o seguinte: Arranhadores Torre R$4.860,00, Arranhadores Parede R$1.440,00, Arranhadores Tapete R$2.700,00 e Outros Arranhadores R$2.560,00. Há um alerta de estoque crítico para arranhadores de parede, o que está impactando as vendas. Os modelos Tapete Simples e Mini Poste são os mais populares entre novos tutores.
+:::
+
+## Faturamento com Brinquedos
+
+![Um gato brincando com um brinquedo](3.png)
+
+::: {.notes}
+Em março de 2025, a Gatito Petshop registrou um faturamento total de R$ 127.845,00. A categoria de brinquedos representa 12% do faturamento total. É importante mencionar que a categoria de rações continua sendo o principal segmento de vendas, representando 62% do faturamento, seguida pelos acessórios como arranhadores, com 15%.
+:::
+
+## Produtos de Reposição Urgente
+
+- Ração Super Premium Sabor Salmão 
+- Arranhadores de Parede
+- Brinquedos de Pena
+
+::: {.notes}
+Para identificar os produtos de previsão de reposição urgente na análise de estoque, realizei uma consulta. Os resultados indicam que os produtos com necessidade de reposição mais urgente são: Ração Super Premium Sabor Salmão (estoque baixo e alta demanda), Arranhadores de Parede (estoque crítico) e Brinquedos de Pena (alta rotatividade). É crucial monitorar esses produtos de perto e otimizar o processo de reposição para evitar rupturas de estoque e garantir a satisfação do cliente.
+:::
+
+## Desempenho por Canal de Venda
+
+- Loja Física: R$76.707,00 (60% do total, Ticket Médio: R$112,45)
+- E-commerce: R$38.353,50 (30% do total, Ticket Médio: R$85,60)
+- Marketplace: R$12.784,50 (10% do total, Ticket Médio: R$79,90)
+
+::: {.notes}
+Com base nos dados, a loja física teve um faturamento de R$76.707,00, representando 60% do total, com um ticket médio de R$112,45 e uma variação mensal de +3,2%. Já o e-commerce faturou R$38.353,50, correspondendo a 30% do total, com um ticket médio de R$85,60 e uma variação mensal de +11,8%. O marketplace contribuiu com R$12.784,50, 10% do total, ticket médio de R$79,90 e variação mensal de +15,4%. As vendas online apresentaram um crescimento de 13,2% em relação ao mês anterior.
+:::
+
+## Diferenciais Competitivos
+
+- Variedade de Produtos
+- Atendimento Especializado
+- Percepção de Qualidade Superior (apesar de preços 5% maiores)
+
+::: {.notes}
+Nossos diferenciais competitivos são a variedade de produtos, o atendimento especializado e a percepção de qualidade, que é maior do que a do concorrente Pet Feliz, apesar de nossos preços serem 5% mais altos.
+:::
+
+## Impacto das Ações de RH
+
+![Foto de uma equipe feliz](7.png)
+
+::: {.notes}
+As ações de RH que impactaram o desempenho das equipes incluem o desenvolvimento de programas de treinamento focados em habilidades específicas necessárias para o sucesso nos projetos. Além disso, a implementação de um sistema de gestão de desempenho transparente e baseado em feedback contínuo contribuiu para o aumento da motivação e engajamento das equipes. A promoção de uma cultura de reconhecimento e recompensa, com bônus por desempenho e oportunidades de crescimento na carreira, também teve um impacto positivo no desempenho geral das equipes.
+:::
+
+## Indicadores Financeiros vs Metas
+
+- Faturamento Bruto: R$ 127.845,00 (Meta: R$ 125.000,00)
+- Lucro Líquido: R$ 35.796,60 (Meta: R$ 33.750,00)
+- Margem de Lucro: 28% (Meta: 27%)
+
+::: {.notes}
+Sim, os indicadores financeiros estão alinhados com as metas da empresa. O faturamento bruto, o lucro líquido e a margem de lucro superaram as metas estabelecidas. O custo de aquisição de cliente também está abaixo da meta, indicando uma boa eficiência na aquisição de novos clientes. Os dados detalhados são: Faturamento Bruto: R$ 127.845,00 (meta: R$ 125.000,00), Lucro Líquido: R$ 35.796,60 (meta: R$ 33.750,00), Margem de Lucro: 28% (meta: 27%), Custo de Aquisição de Cliente: R$ 42,30 (meta: R$ 45,00).
+:::
+
+## Próximos Passos e Recomendações
+
+- Investir em estratégias de vendas online (cupons, amostras).
+- Explorar o crescimento da categoria de brinquedos no e-commerce.
+- Otimizar serviços de banho e tosa (alta demanda e satisfação).
+
+::: {.notes}
+Com base nos dados analisados, fica evidente a importância de investir em estratégias de vendas online, como cupons de desconto e amostras grátis, que demonstraram alta conversão. Além disso, a categoria de brinquedos no e-commerce apresenta um crescimento significativo, indicando uma oportunidade a ser explorada. Os serviços de banho e tosa também se destacam, com alta taxa de ocupação e satisfação dos clientes, sendo o banho completo com hidratação o serviço mais bem avaliado.
+:::
+
+## Reação dos Gatos aos Produtos
+
+![Gato feliz usando um arranhador](10.png)
+
+::: {.notes}
+A reação mais comum do gato varia dependendo do produto. No caso da ração premium seca, a reação mais comum é comer tudo em minutos. Para brinquedos com catnip, a reação mais comum é rolar no chão e miar. Já para o arranhador torre luxo, a reação mais comum é subir e arranhar por horas.
+:::
